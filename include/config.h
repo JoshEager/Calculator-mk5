@@ -15,5 +15,5 @@
 #define BAUD_RATE 115200
 
 // Keypad settings
-#define MAX_ROWS 7
-#define MAX_COLS 4
+#define ROWS 7
+#define COLS 4
