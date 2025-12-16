@@ -8,17 +8,19 @@
 class KeypadInterface
 {
 private:
-    int polling_rate_ms;
+    int polling_delay_ms;
     Keypad* kpd;
 
     TaskHandle_t polling_task_handle;
-    QueueHandle_t key_queue;
+    
 
     void pollingTask();
 
 public:
-    KeypadInterface(std::array<std::array<const char, COLS>, ROWS> keys, byte *rowPins, byte *colPins);
+    KeypadInterface(std::array<std::array<const char, COLS>, ROWS> keys, byte *rowPins, byte *colPins, int polling_delay_ms);
 
+    QueueHandle_t key_queue;
+    
     void begin();
     static void pollingTaskEntry(void *pvParameters);
 };
