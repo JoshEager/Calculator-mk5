@@ -3,9 +3,9 @@
 #include "interfaces/KeypadInterface.h"
 
 KeypadInterface *keypad_interface;
-char pressedKey;
+char pressedKey = '!';
 
-std::array<std::array<const char, COLS>, ROWS> key_mappings = {{
+std::array<std::array<char, COLS>, ROWS> key_mappings = {{
     {'a', 'b', 'c', 'd'},
     {'e', 'f', 'g', 'h'},
     {'i', 'j', 'k', 'l'},

@@ -5,7 +5,7 @@
 #include <array>
 #include "config.h"
 
-class KeypadInterface
+class KeypadInterface 
 {
 private:
     int polling_delay_ms;
@@ -17,10 +17,10 @@ private:
     void pollingTask();
 
 public:
-    KeypadInterface(std::array<std::array<const char, COLS>, ROWS> keys, byte *rowPins, byte *colPins, int polling_delay_ms);
+    KeypadInterface(std::array<std::array<char, COLS>, ROWS> keys, byte *rowPins, byte *colPins, int polling_delay_ms);
 
     QueueHandle_t key_queue;
-    
+
     void begin();
     static void pollingTaskEntry(void *pvParameters);
 };
