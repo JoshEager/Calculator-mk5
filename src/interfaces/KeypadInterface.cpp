@@ -60,3 +60,18 @@ void KeypadInterface::begin()
         &polling_task_handle, 
         1);
 }
+
+
+static char key_mappings[ROWS][COLS] = {
+    {'a', 'b', 'c', 'd'},
+    {'e', 'f', 'g', 'h'},
+    {'i', 'j', 'k', 'l'},
+    {'m', 'n', 'o', 'p'},
+    {'q', 'r', 's', 't'},
+    {'u', 'v', 'w', 'x'},
+    {'y', 'z', '0', '1'},
+};
+static byte rowPins[] = {ROW1_PIN, ROW2_PIN, ROW3_PIN, ROW4_PIN, ROW5_PIN, ROW6_PIN, ROW7_PIN};
+static byte colPins[] = {COL1_PIN, COL2_PIN, COL3_PIN, COL4_PIN};
+
+KeypadInterface *keypad_interface = new KeypadInterface(key_mappings, rowPins, colPins, 50);

@@ -24,3 +24,5 @@ public:
     void begin();
     static void pollingTaskEntry(void *pvParameters);
 };
+
+extern KeypadInterface *keypad_interface;
