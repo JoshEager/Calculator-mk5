@@ -29,12 +29,12 @@ namespace KeypadInterface
                     if (kpd->key[i].kstate == PRESSED)
                     {
                         xQueueSend(this->key_queue, &(kpd->key[i].kchar), pdMS_TO_TICKS(KEYPAD_QUEUE_WAIT_TIME_MS));
-                        PRINTDBG(String("Key Pressed: ") + kpd->key[i].kchar + '\n');
+                        PRINTDBG(String("Key Pressed: ") + kpd->key[i].kchar);
                     }
                     else if (kpd->key[i].kstate == HOLD)
                     {
                         xQueueSend(this->key_queue, &(kpd->key[i].kchar), pdMS_TO_TICKS(KEYPAD_QUEUE_WAIT_TIME_MS));
-                        PRINTDBG(String("Key Held: ") + kpd->key[i].kchar + '\n');
+                        PRINTDBG(String("Key Held: ") + kpd->key[i].kchar);
                     }
                 }
             }
