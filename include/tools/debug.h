@@ -6,11 +6,11 @@
  * 
  */
 
-#include <Arduino.h>
+#include "tools/serial_print.h"
 #include "config.h" 
 
 #ifdef DEBUG
-    #define PRINTDBG(x) Serial.print(x)
+    #define PRINTDBG(x) serial_println(x)
 #else
     #define PRINTDBG(x)
 #endif
