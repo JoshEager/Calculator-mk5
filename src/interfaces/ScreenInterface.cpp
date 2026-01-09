@@ -22,7 +22,7 @@ namespace ScreenInterface {
         tft->fillScreen(TFT_BLACK);
     }
 
-    void my_print(lv_log_level_t level, const char *buf) {
+    void print_cb(lv_log_level_t level, const char *buf) {
         LV_UNUSED(level);
         PRINTDBG(buf);
     }
@@ -52,7 +52,7 @@ namespace ScreenInterface {
     void initLVGL() {
         lv_init();
 
-        lv_log_register_print_cb(my_print);
+        lv_log_register_print_cb(print_cb);
 
         lv_tick_set_cb(tick_get_cb);
 
