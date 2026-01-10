@@ -83,7 +83,7 @@ namespace KeypadInterface
     {
         static char key;
 
-        if (xQueueReceive(keypad_interface->key_queue, &key, 5 / portTICK_PERIOD_MS) == pdTRUE)
+        if (xQueueReceive(keypad_interface->key_queue, &key, 0) == pdTRUE)
         {
             return key;
         }
