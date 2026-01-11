@@ -29,12 +29,12 @@ namespace KeypadInterface
                     if (kpd->key[i].kstate == PRESSED)
                     {
                         xQueueSend(this->key_queue, &(kpd->key[i].kchar), pdMS_TO_TICKS(KEYPAD_QUEUE_WAIT_TIME_MS));
-                        PRINTDBG(String("Key Pressed: ") + kpd->key[i].kchar);
+                        PRINTDBG(String("Key Pressed: ") + (int)kpd->key[i].kchar);
                     }
                     else if (kpd->key[i].kstate == HOLD)
                     {
                         xQueueSend(this->key_queue, &(kpd->key[i].kchar), pdMS_TO_TICKS(KEYPAD_QUEUE_WAIT_TIME_MS));
-                        PRINTDBG(String("Key Held: ") + kpd->key[i].kchar);
+                        PRINTDBG(String("Key Held: ") + (int)kpd->key[i].kchar);
                     }
                 }
             }
@@ -64,13 +64,13 @@ namespace KeypadInterface
     }
 
     static char key_mappings[ROWS][COLS] = {
-        {'a', 'b', 'c', 'd'},
-        {'e', 'f', 'g', 'h'},
-        {'i', 'j', 'k', 'l'},
-        {'m', 'n', 'o', 'p'},
-        {'q', 'r', 's', 't'},
-        {'u', 'v', 'w', 'x'},
-        {'y', 'z', '0', '1'},
+        {71, 72, 73, 74},
+        {61, 62, 63, 64},
+        {51, 52, 53, 54},
+        {41, 42, 43, 44},
+        {31, 32, 33, 34},
+        {21, 22, 23, 24},
+        {11, 12, 13, 14},
     };
     static byte rowPins[] = {ROW1_PIN, ROW2_PIN, ROW3_PIN, ROW4_PIN, ROW5_PIN, ROW6_PIN, ROW7_PIN};
     static byte colPins[] = {COL1_PIN, COL2_PIN, COL3_PIN, COL4_PIN};
