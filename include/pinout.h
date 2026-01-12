@@ -13,13 +13,13 @@
 
 
 // Pinouts for the matrix keypad
-#define ROW1_PIN 1
-#define ROW2_PIN 4
-#define ROW3_PIN 5
-#define ROW4_PIN 6
-#define ROW5_PIN 7
-#define ROW6_PIN 9
-#define ROW7_PIN 14
+#define ROW1_PIN 1 // Actually connects to the pin labeled ROW7 on the matrix pcb
+#define ROW2_PIN 4 // ROW6
+#define ROW3_PIN 5 // ROW5
+#define ROW4_PIN 6 // ROW4
+#define ROW5_PIN 7 // ROW3
+#define ROW6_PIN 9 // ROW2
+#define ROW7_PIN 14 // ROW1
 
 #define COL1_PIN 21
 #define COL2_PIN 18
